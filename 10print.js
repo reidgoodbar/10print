@@ -5,13 +5,13 @@
 const w = process.stdout.columns
 
 function draw () {
-  setTimeout(draw, 1000)
-  let output = ''
+  setTimeout(draw, 100)
+  let output = '\x1b[44m\x1b[94m'
   for (let i = 0; i < w; i++) {
-    if (Math.random() > 0.5) {
-      output += '\\'
+    if (Math.random() > 0.2) {
+      output += '\x1b[37m╲'
     } else {
-      output += '/'
+      output += '\x1b[37m╱'
     }
   }
   console.log(output)
